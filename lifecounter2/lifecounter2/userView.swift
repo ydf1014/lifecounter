@@ -23,12 +23,17 @@ class userView: UIView {
         }
     }
     
-    weak var label: UILabel!
-    weak var subtractOne: UIButton!
-    weak var scoreLabel: UILabel!
-    weak var addOne: UIButton!
-    weak var addFive: UIButton!
-    weak var subtractFive: UIButton!
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var changeNeg: UIButton!
+    @IBOutlet weak var subtractFive: UIButton!
+    @IBOutlet weak var subtractOne: UIButton!
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var addOne: UIButton!
+    @IBOutlet weak var addFive: UIButton!
+    @IBOutlet weak var changePos: UIButton!
+    
+
+
     var buttonValue : Int = 5
     
     override init(frame: CGRect) {
@@ -41,14 +46,32 @@ class userView: UIView {
         super.init(coder: coder)
         self.initSubViews()
     }
-   
+    
     @objc func addFive(_ sender: Any) {
-        NSLog("clicked up bum")
-        scoreLabel.text = "8"
+        
+        // Modify our internal data
+        data = (data.0, data.1 + 5)
+        
+        // Update the label with modified data
+        scoreLabel.text = "\(data.0) : \(data.1)"
+
+        history.append("5 addded from \(data.0)")
+    }
+   
+    @objc func subtractFive(_ sender: Any) {
+        // Modify our internal data
+        data = (data.0, data.1 - 5)
+        
+        // Update the label with modified data
+        scoreLabel.text = "\(data.0) : \(data.1)"
+
+        
+        history.append("5 subtracterd from \(data.0)")
+
+
     }
     
     private func initSubViews() {
-        NSLog("hellooo youo addd a thing")
         // Instantiate the nib into existence
         let nib = UINib(nibName: "user", bundle: nil)
         let nibInstance = nib.instantiate(withOwner: self, options: nil)
@@ -59,23 +82,21 @@ class userView: UIView {
         
         // Wire up the controls to this view
         label = (nibView.subviews[0].subviews[0] as! UILabel)
-        label.text = "\(data.0)"
+        label.text = "\(data.0) : \(data.1)"
         
-        subtractFive = (nibView.subviews[0].subviews[1] as! UIButton)
-        subtractFive.addTarget(self, action: #selector(subtractOneScore(_:)), for: .touchUpInside)
+        subtractFive = (nibView.subviews[1].subviews[0] as! UIButton)
+        subtractFive.addTarget(self, action: #selector(subtractFive(_:)), for: .touchUpInside)
         
-        subtractOne = (nibView.subviews[0].subviews[2] as! UIButton)
+        subtractOne = (nibView.subviews[1].subviews[1] as! UIButton)
         subtractOne.addTarget(self, action: #selector(subtractOneScore(_:)), for: .touchUpInside)
-        
-        scoreLabel = (nibView.subviews[0].subviews[3] as! UILabel)
-        label.text = "\(data.1)"
-        
-        addOne = (nibView.subviews[0].subviews[4] as! UIButton)
+
+        addOne = (nibView.subviews[1].subviews[2] as! UIButton)
         addOne.addTarget(self, action: #selector(addOneScore(_:)), for: .touchUpInside)
         
-        addFive = (nibView.subviews[0].subviews[5] as! UIButton)
+        addFive = (nibView.subviews[1].subviews[3] as! UIButton)
         addFive.addTarget(self, action: #selector(addFive(_:)), for: .touchUpInside)
     }
+    
     
     func changeButtonValue(_ count: Int) {
         buttonValue = count
@@ -84,23 +105,25 @@ class userView: UIView {
     }
     
     @objc private func subtractOneScore(_ sender : UIButton) {
+        
         // Modify our internal data
         data = (data.0, data.1 - 1)
         
         // Update the label with modified data
-        scoreLabel.text = "\(data.1)"
+        scoreLabel.text = "\(data.0) : \(data.1)"
 
-        NSLog("Happy Birthday, \(data.0) you are now \(data.1)")
+        history.append("1 subtracted from \(data.0)")
     }
     
     @objc private func addOneScore(_ sender : UIButton) {
+        
         // Modify our internal data
         data = (data.0, data.1 + 1)
         
         // Update the label with modified data
-        scoreLabel.text = "\(data.1)"
+        scoreLabel.text = "\(data.0) : \(data.1)"
 
-        NSLog("Happy Birthday, \(data.0) you are now \(data.1)")
+        history.append("1 added from \(data.0)")
     }
 
 }

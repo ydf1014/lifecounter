@@ -6,11 +6,12 @@
 //
 
 import UIKit
-
+var history:[String] = []
 class ViewController: UIViewController {
 
     @IBOutlet weak var contentView: UIStackView!
-    var count : Int = 3
+    var count : Int = 1
+    var history = false
     
     @IBAction func subtractPlayer(_ sender: Any) {
         NSLog("subtracting player")
@@ -44,7 +45,6 @@ class ViewController: UIViewController {
         personPanel.data = (name, age)
         contentView.addArrangedSubview(personPanel)
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

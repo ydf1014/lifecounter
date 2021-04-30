@@ -17,6 +17,7 @@
 		174A573F263BD32700613C2A /* lifecounter2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174A573E263BD32700613C2A /* lifecounter2UITests.swift */; };
 		174A5750263BDA6E00613C2A /* userView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174A574F263BDA6E00613C2A /* userView.swift */; };
 		174A575D263BE06B00613C2A /* user.xib in Resources */ = {isa = PBXBuildFile; fileRef = 174A575C263BE06B00613C2A /* user.xib */; };
+		174A5762263C086800613C2A /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174A5761263C086800613C2A /* HistoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +53,8 @@
 		174A573E263BD32700613C2A /* lifecounter2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lifecounter2UITests.swift; sourceTree = "<group>"; };
 		174A5740263BD32700613C2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		174A574F263BDA6E00613C2A /* userView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userView.swift; sourceTree = "<group>"; };
-		174A575C263BE06B00613C2A /* user.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = user.xib; sourceTree = "<group>"; };
+		174A575C263BE06B00613C2A /* user.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = user.xib; path = "/Users/danfengyang/Desktop/work/大四/SP21/INFO449 IOS Dev/lifecounter/lifecounter2/lifecounter2/user.xib"; sourceTree = "<absolute>"; };
+		174A5761263C086800613C2A /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				174A571E263BD32500613C2A /* SceneDelegate.swift */,
 				174A5720263BD32500613C2A /* ViewController.swift */,
 				174A574F263BDA6E00613C2A /* userView.swift */,
+				174A5761263C086800613C2A /* HistoryView.swift */,
 				174A575C263BE06B00613C2A /* user.xib */,
 				174A5722263BD32500613C2A /* Main.storyboard */,
 				174A5725263BD32700613C2A /* Assets.xcassets */,
@@ -267,6 +270,7 @@
 			files = (
 				174A5721263BD32500613C2A /* ViewController.swift in Sources */,
 				174A571D263BD32500613C2A /* AppDelegate.swift in Sources */,
+				174A5762263C086800613C2A /* HistoryView.swift in Sources */,
 				174A571F263BD32500613C2A /* SceneDelegate.swift in Sources */,
 				174A5750263BDA6E00613C2A /* userView.swift in Sources */,
 			);
